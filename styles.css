@@ -1,97 +1,557 @@
+/* ==========================
+   GENERAL
+========================== */
+
 body{
 
-font-family:'Open Sans',sans-serif;
+    margin:0;
 
-background:#081325;
+    font-family:'Open Sans',sans-serif;
 
-color:white;
+    background:#081325;
+
+    color:white;
 
 }
 
+/* ==========================
+   NAVIGATION
+========================== */
+
 .navbar{
 
-background:#081325;
+    background:#081325;
 
-padding:20px;
+    padding:18px 0;
 
 }
 
 .navbar-brand{
 
-font-family:'Poppins',sans-serif;
+    font-family:'Poppins',sans-serif;
 
-font-size:1.6rem;
+    font-size:1.6rem;
 
-font-weight:700;
+    font-weight:700;
 
 }
 
 .nav-link{
 
-color:white!important;
+    color:white !important;
 
-margin-left:20px;
+    margin-left:20px;
 
-font-weight:600;
+    font-weight:600;
 
 }
 
+.nav-link:hover{
+
+    color:#2F80FF !important;
+
+}
+
+/* ==========================
+   HERO
+========================== */
+
 .hero{
 
-padding:120px 0;
+    min-height:100vh;
 
-background:linear-gradient(135deg,#081325,#10284f);
+    display:flex;
+
+    align-items:center;
+
+    background:linear-gradient(135deg,#081325,#11284B);
+
+    padding-top:100px;
 
 }
 
 .hero h1{
 
-font-family:'Poppins',sans-serif;
+    font-family:'Poppins',sans-serif;
 
-font-size:4rem;
+    font-size:4.5rem;
 
-font-weight:800;
+    font-weight:800;
 
-line-height:1.1;
+    line-height:1.05;
 
-margin-bottom:30px;
+    margin-bottom:30px;
 
 }
 
-.hero h1 span{
+.hero span{
 
-color:#2f80ff;
+    color:#2F80FF;
 
 }
 
 .hero p{
 
-font-size:1.3rem;
+    color:#d7d7d7;
 
-line-height:1.8;
+    font-size:1.25rem;
 
-margin-bottom:40px;
-
-color:#d8d8d8;
+    line-height:1.8;
 
 }
 
 .btn-primary{
 
-background:#2f80ff;
+    background:#2F80FF;
 
-border:none;
+    border:none;
 
-padding:15px 35px;
+    padding:15px 35px;
 
-font-weight:700;
+    font-weight:700;
+
+}
+
+.btn-primary:hover{
+
+    background:#1E6CE5;
 
 }
 
 .btn-outline-light{
 
-padding:15px 35px;
+    padding:15px 35px;
 
-font-weight:700;
+    font-weight:700;
+
+}
+
+.cycle-placeholder{
+
+    border:2px dashed rgba(255,255,255,.3);
+
+    border-radius:20px;
+
+    padding:80px 40px;
+
+}
+
+.cycle-placeholder h2{
+
+    font-family:'Poppins',sans-serif;
+
+    font-weight:700;
+
+}
+
+/* ==========================
+   HERO IMAGE
+========================== */
+
+.hero-wheel{
+    max-width:520px;
+    width:100%;
+    display:block;
+    border-radius:50%;
+    padding:0;
+    background:transparent;
+    box-shadow:
+        0 0 35px rgba(47,128,255,.20),
+        0 20px 45px rgba(0,0,0,.35);
+    transition:all .35s ease;
+}
+
+.hero-wheel:hover{
+
+    transform:translateY(-8px) scale(1.02);
+
+    box-shadow:
+        0 0 55px rgba(47,128,255,.45),
+        0 35px 80px rgba(0,0,0,.55);
+
+}
+
+/*=================================================
+    WHAT IS THE NEED CYCLE
+==================================================*/
+
+#about-framework{
+
+    background:#122544;
+
+    padding:80px 0 100px;
+
+    color:white;
+
+}
+
+.section-divider{
+
+    width:140px;
+
+    height:4px;
+
+    background:linear-gradient(90deg,#3d7eff,#19bfd3);
+
+    border-radius:10px;
+
+    margin:0 auto 45px;
+
+}
+
+.section-heading{
+
+    text-align:center;
+
+    margin-bottom:45px;
+
+}
+
+.section-tag{
+
+    display:inline-block;
+
+    color:#58a6ff;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    font-size:.85rem;
+
+    margin-bottom:15px;
+
+}
+
+.section-heading h2{
+
+    font-size:3rem;
+
+    font-weight:800;
+
+    margin-bottom:15px;
+
+}
+
+.section-subtitle{
+
+    font-size:1.3rem;
+
+    color:#cbd5e1;
+
+}
+
+.framework-intro{
+
+    max-width:850px;
+
+    margin:0 auto 60px;
+
+    text-align:center;
+
+}
+
+.framework-intro p{
+
+    color:#dbe5f3;
+
+    font-size:1.15rem;
+
+    line-height:1.9;
+
+}
+
+/* ==========================
+   FLIP CARDS
+========================== */
+
+.flip-card{
+
+    perspective:1200px;
+
+    height:430px;
+
+    cursor:pointer;
+
+}
+
+.flip-card-inner{
+
+    position:relative;
+
+    width:100%;
+
+    height:100%;
+
+    transition:transform .7s;
+
+    transform-style:preserve-3d;
+
+}
+
+.flip-card.flipped .flip-card-inner{
+
+    transform:rotateY(180deg);
+
+}
+
+.flip-card-front,
+.flip-card-back{
+
+    position:absolute;
+
+    width:100%;
+
+    height:100%;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    backface-visibility:hidden;
+
+    -webkit-backface-visibility:hidden;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    box-shadow:0 18px 45px rgba(0,0,0,.25);
+
+}
+
+.flip-card-front{
+
+    background:white;
+
+    color:#16314f;
+
+}
+
+.flip-card-back{
+
+    background:linear-gradient(135deg,#1c4da1,#2F80FF);
+
+    color:white;
+
+    transform:rotateY(180deg);
+
+}
+
+.need-icon{
+
+    font-size:3.5rem;
+
+    margin-bottom:20px;
+
+}
+
+.flip-card h3{
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:1.7rem;
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+}
+
+.flip-card p{
+
+    line-height:1.7;
+
+}
+
+.flip-hint{
+
+    margin-top:auto;
+
+    padding-top:25px;
+
+    font-size:.9rem;
+
+    font-weight:600;
+
+    color:#2F80FF;
+
+}
+
+.flip-card-back .flip-hint{
+
+    color:white;
+
+}
+
+.mini-title{
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+    font-size:.8rem;
+
+    font-weight:700;
+
+    opacity:.8;
+
+    margin-bottom:8px;
+
+}
+
+.flip-card-back ul{
+
+    text-align:left;
+
+    margin:20px 0;
+
+    padding-left:20px;
+
+}
+
+.flip-card-back li{
+
+    margin-bottom:10px;
+
+}
+
+.quote{
+
+    margin-top:auto;
+
+    font-style:italic;
+
+    opacity:.9;
+
+    border-top:1px solid rgba(255,255,255,.3);
+
+    padding-top:18px;
+
+}
+
+.flip-card:hover{
+
+    transform:translateY(-8px);
+
+    transition:.25s;
+
+}
+
+.flip-card:focus-visible{
+
+    outline:3px solid #58a6ff;
+
+    outline-offset:6px;
+
+}
+
+@media (max-width:991px){
+
+    .flip-card{
+
+        height:470px;
+
+    }
+
+}
+
+@media (max-width:767px){
+
+    .flip-card{
+
+        height:500px;
+
+    }
+
+}
+
+/*=================================================
+    LESSON COMPLETE PANEL
+==================================================*/
+
+.lesson-complete{
+
+    max-width:900px;
+
+    margin:70px auto 0;
+
+    padding:55px;
+
+    border-radius:24px;
+
+    text-align:center;
+
+    background:linear-gradient(135deg,#12305d,#2F80FF);
+
+    box-shadow:0 25px 60px rgba(0,0,0,.35);
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:all .6s ease;
+
+    pointer-events:none;
+
+}
+
+.lesson-complete.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+    pointer-events:auto;
+
+}
+
+.completion-icon{
+
+    font-size:4rem;
+
+    margin-bottom:20px;
+
+}
+
+.lesson-complete h3{
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:2.3rem;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+}
+
+.lesson-complete p{
+
+    color:#eef4ff;
+
+    font-size:1.15rem;
+
+    line-height:1.8;
+
+    max-width:650px;
+
+    margin:0 auto 18px;
+
+}
+
+.lesson-complete .btn{
+
+    margin-top:25px;
+
+    padding:16px 40px;
+
+    font-weight:700;
 
 }
