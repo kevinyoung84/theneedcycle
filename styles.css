@@ -306,7 +306,7 @@ body{
 
     border-radius:20px;
 
-    padding:35px;
+    padding:28px;
 
     backface-visibility:hidden;
 
@@ -443,26 +443,6 @@ body{
     border-top:1px solid rgba(255,255,255,.3);
 
     padding-top:12px;
-
-}
-
-.flip-card-back::-webkit-scrollbar{
-
-    width:6px;
-
-}
-
-.flip-card-back::-webkit-scrollbar-thumb{
-
-    background:rgba(255,255,255,.35);
-
-    border-radius:10px;
-
-}
-
-.flip-card-back::-webkit-scrollbar-track{
-
-    background:transparent;
 
 }
 
